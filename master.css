@@ -1,9 +1,9 @@
 body {
-	background: black;
+	background: white;
 }
 
 h1 {
-	color: white;
+	color: black;
 }
 
 .button {  
@@ -35,5 +35,10 @@ h1 {
 	
 	/* TEXT SHADOW */
 	text-shadow: 1px 1px 1px black;
+	
+	/* BOX SHADOW */
+	-moz-box-shadow: 0 1px 3px black;
+	-webkit-box-shadow: 0 1px 3px black;
+	box-shadow: 0 1px 3px black;
 
 }
