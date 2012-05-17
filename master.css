@@ -4,6 +4,7 @@ body {
 
 h1 {
 	color: black;
+	margin-bottom: 40px;
 }
 
 .button {  
@@ -17,7 +18,7 @@ h1 {
 	font-weight: bold;  
  	display: block;  
 	text-align: center;  
-	position: relative;  
+	position: relative;
 	
 
 	/* BACKGROUND GRADIENTs */
@@ -42,3 +43,28 @@ h1 {
 	/* 3D Transform */
 	-webkit-transform:translate3d(10px,40px,10px)
 }
+
+  
+ h1 {  
+	-webkit-animation-duration: 2s;  
+   	-webkit-animation-name: slidein; 
+	-webkit-animation-iteration-count: infinite; 
+ }  
+
+ @-webkit-keyframes slidein {  
+   	0% {  
+    	-webkit-transform:translate3d(0px,0px,0px);  
+		width : 100%;
+   	}  
+
+	50% {  
+		-webkit-transform:translate3d(200px,0px,0px);
+		/*margin-left: 80%;*/
+		width : 100%;   
+   	} 
+ 
+	100%{
+		-webkit-transform:translate3d(0px,0px,0px);   
+		width : 100%;	
+	}
+}  
