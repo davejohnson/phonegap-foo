@@ -7,12 +7,12 @@ h1 {
 }
 
 .button {  
-	width: 400px;  
+	width: 200px;  
 	height: 100px;  
 	line-height: 100px;  
 	color: white;
 	text-decoration: none;  
-	font-size: 50px;  
+	font-size: 30px;  
 	font-family: helvetica, arial;  
 	font-weight: bold;  
  	display: block;  
@@ -38,7 +38,7 @@ h1 {
 
 }
 
-.button:active{
-	/*2d Transform */
-	-webkit-transform:translate(0px,40px);
+.tfbttn {
+	/* 3D Transform */
+	-webkit-transform:translate3d(10px,40px,10px)
 }
