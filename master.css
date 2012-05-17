@@ -22,13 +22,10 @@ h1 {
 
 	/* BACKGROUND GRADIENTs */
 	background: #014464;
-	background: -moz-linear-gradient(top, #0D658E, #0C577A 50%, #014D71 51%, #003E5C);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #0E658E), color-stop(.5, #0C577A), color-stop(.5, #014D71), to(#003E5C));
 
 	/* BORDER RADIUS */
-	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
-	border-radius: 10px;
 
 	border: 1px solid #368DBE;
 	border-top: 1px solid #c3d6df;
@@ -37,8 +34,11 @@ h1 {
 	text-shadow: 1px 1px 1px black;
 	
 	/* BOX SHADOW */
-	-moz-box-shadow: 0 1px 3px black;
 	-webkit-box-shadow: 0 1px 3px black;
-	box-shadow: 0 1px 3px black;
 
+}
+
+.button:active{
+	/*2d Transform */
+	-webkit-transform:translate(0px,40px);
 }
