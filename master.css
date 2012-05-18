@@ -37,7 +37,7 @@
 
 .tfbttn {
 	/* 3D Transform */
-	-webkit-transform:translate3d(10px,40px,10px);
+	-webkit-transform:translate3d(40px,0px,0px);
 	
 	/* Transition */
 	-webkit-transition-property: color;  
