@@ -87,3 +87,8 @@ p {
 	font-family: KomikaTitleRegular;
 	font-size: 25px;
 } 
+
+.telephony{
+	font-size:36;
+	color:red;
+}
