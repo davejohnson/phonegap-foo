@@ -4,6 +4,19 @@
     <title>Input Type Example</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, 
         maximum-scale=1.0" />
+    <style>
+        input[type='range']{
+            background: #0c0;
+            height:10px;
+        }
+
+        input[type='range']::-webkit-slider-thumb{
+            background:#f60;
+            height:30px;
+            width:30px;
+            border-radius: 30px;
+        }
+    </style>
 </head>
 <body>
     <h1>Input Type Example</h1>
@@ -18,5 +31,7 @@
     <input type="url" />
     <h4>type: tel</h4>
     <input type="tel" />
+    <h4>type: range</h4>
+    <input type="range" min="1" max="10"/>
 </body>
 </html>
