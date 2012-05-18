@@ -63,4 +63,22 @@
 		-webkit-transform:translate3d(0px,0px,0px);   
 		width : 100%;	
 	}
-}  
+} 
+
+@font-face {
+    font-family: 'KomikaTitleRegular';
+    src: url('font/KomikaTitle-webfont.eot');
+    src: url('font/KomikaTitle-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/KomikaTitle-webfont.woff') format('woff'),
+         url('font/KomikaTitle-webfont.ttf') format('truetype'),
+         url('font/KomikaTitle-webfont.svg#KomikaTitleRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+	
+
+}
+
+p {
+	font-family: KomikaTitleRegular;
+	font-size: 25px;
+} 

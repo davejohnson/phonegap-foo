@@ -1,0 +1,31 @@
+#mtest {
+	font-size:24px;
+}
+
+/* iPhone non retina portrait */
+@media all and (orientation: portrait)  {
+	#mtest {
+    	color: green;
+  	}
+}
+
+/* iPhone non retina landscape */
+@media all and (orientation: landscape)  {
+	#mtest {
+    	color: blue;
+  	}
+}
+
+/* iPhone retina portrait */
+@media all and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+	#mtest {
+    	color: red;
+  	}
+}
+
+/* iPhone retina landscape */
+@media all and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+	#mtest {
+    	color: yellow;
+  	}
+}

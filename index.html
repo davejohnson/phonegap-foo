@@ -10,12 +10,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, 
         maximum-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="master.css" />
-    
+    <!--This is to handle mobile phone css -->
+    <link rel="stylesheet" media="all and (max-device-width: 480px)" href="mobile.css"> 
+    <!--The next three style sheets are not included, but here just as a reference-->
+    <!--This is to handle larger mobile phones -->
+    <link rel="stylesheet" media="all and (min-device-width: 481px) and (max-device-width: 760px)" 
+        type="text/css" href="css/mobile-large.css"/>
+    <!--This is to handle tablet css with portrait orientation -->
+    <link rel="stylesheet" media="all and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)" href="tablet-portrait"> 
+    <!--This is to handle tablet css with landscape orientation -->
+    <link rel="stylesheet" media="all and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)" href="tablet-landscape.css">
 </head>
 
 <body>
     <h1>Hello World</h1>
+    <p>This should be a custom font</p>
+    <div id="mtest">Media Test</div>
     <a href="#" class="button" id="clickbttn" onclick="transform();" > Click Here! </a>
+    
+
 </body>
 <script type="text/javascript" src="app.js"></script>
 </html>
