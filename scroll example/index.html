@@ -2,8 +2,13 @@
 <html>
 <head>
     <title>Scroll Example</title>
+    <!-- Position Fix Working Stylesheet
     <link rel="stylesheet" type="text/css" href="positionFix.css" />
+    -->
+    <!--iScroll example style sheet-->
+    <link rel="stylesheet" type="text/css" href="iscrollexample.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
 </head>
 <body>
     <header>
@@ -40,5 +45,14 @@
     <footer>
         Some Footer Content
     </footer>
+    <!--Only need the following JS for iScroll example-->
+    <script type="text/javascript" src="iscroll-lite.js"></script>
+    <script type="text/javascript">
+    var theScroll;
+    function scroll() {
+        theScroll = new iScroll('wrapper');
+    }
+    document.addEventListener('DOMContentLoaded', scroll, false);
+    </script>
 </body>
 </html>
