@@ -9,7 +9,7 @@
 	<!-- iPad/iPhone specific css below, add after your main css >
 	<link rel="stylesheet" media="only screen and (max-device-width: 1024px)" href="ipad.css" type="text/css" />		
 	-->
-    <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="iphone.css" type="text/css" />	
+    <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="iphone.css" type="text/css" />
 
     <script type="text/javascript" charset="utf-8" src="cordova-1.7.0.js"></script>
     <script type="text/javascript" charset="utf-8" src="zepto.js"></script>
@@ -25,27 +25,51 @@
 		// TODO: do something with the url passed in.
 	}
 	*/
-	
-	document.addEventListener("deviceready", function () {
-            // do your thing!
-            navigator.notification.alert("Cordova is working")
+
+    var App = {
+        getPub: function() {
             $.ajax({ url: 'http://api.untappd.com/v3/thepub?key=9976a03749c9d6b2b02c9b5d49de64e8'
-                   , success: function(data) {document.body.innerHTML = template(data)}
+                   , success: App.renderPub
                    , error: function() {alert('xhr error')} })
-            var template = Handlebars.compile($('#pub-template').html());
+        },
+        renderPub: function(data) {
+            App.currentPubData = data
+            document.body.innerHTML = (Handlebars.compile($('#pub-template').html()))(data)
+            $('.checkin').on('touchstart', App.getDetails, false);
+        },
+        getDetails: function(e) {
+            $.ajax({ url: 'http://api.untappd.com/v3/details?key=9976a03749c9d6b2b02c9b5d49de64e8&id='+e.target.getAttribute('data-id')
+                   , success: App.renderDetails
+                   , error: function() {alert('xhr error')} })
+        },
+        renderDetails: function(data) {
+            document.body.innerHTML = (Handlebars.compile($('#checkin-template').html()))(data)
         }
-        , false);
-    
+    }
+
+    document.addEventListener("deviceready", App.getPub, false);
+
     </script>
 
 	<script id="pub-template" type="text/x-handlebars-template">
         {{#each results}}
-            <div class=checkin>
-            {{#with user}}<img src={{user_avatar}}>{{/with}}
-            {{beer_name}}
+            <div class=checkin data-id={{checkin_id}}>
+                {{#with user}}<img src={{user_avatar}}>{{/with}}
+                {{beer_name}}
             </div>
         {{/each}}
 	</script>
+
+    <script id="checkin-template" type="text/x-handlebars-template">
+        {{#with results}}
+            <div class=checkin-details>
+                {{#with user}}<h2><img src={{user_avatar}}>{{first_name}} {{last_name}}</h2>{{/with}}
+                <h3>{{beer_name}} by {{brewery_name}}</h3>
+                <h4>{{toast_count}} toasts, rating {{avg_rating}}</h4>
+                <p>{{check_in_comment}}</p>
+            </div>
+        {{/with}}
+    </script>
   </head>
   <body>
 	<h1>Let's check out some beer.</h1>

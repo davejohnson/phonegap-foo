@@ -1,4 +1,11 @@
 .checkin img {
 	width: 24px;
 	height: 24px;
+    margin-right: 10px;
+}
+
+.checkin-details img {
+    width: 48px;
+    height: 48px;
+    margin-right: 10px;
 }
