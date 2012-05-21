@@ -48,11 +48,14 @@
         },
         sayHello: function() {
         	window.hello.say(function(data) {alert(data)}, function() {alert('error')})
+        },
+        changeUrl: function() {
+        	location = 'foo://bar'
         }
     }
 
     document.addEventListener("deviceready", App.getPub, false);
-        
+
     </script>
 
 	<script id="pub-template" type="text/x-handlebars-template">
@@ -79,6 +82,7 @@
                     <h4>{{toast_count}} toasts, rating {{avg_rating}}</h4>
                     <p>{{check_in_comment}}</p>
 					<p><button onclick=App.sayHello()>say hello</button></p>
+					<p><button onclick=App.changeUrl()>change url</button></p>
                 </div>
             {{/with}}
         </div>
