@@ -14,6 +14,7 @@
     <script type="text/javascript" charset="utf-8" src="cordova-1.7.0.js"></script>
     <script type="text/javascript" charset="utf-8" src="zepto.js"></script>
     <script type="text/javascript" charset="utf-8" src="handlebars.js"></script>
+    <script type="text/javascript" charset="utf-8" src="hello.js"></script>
     <script type="text/javascript">
 
 	/* If you are supporting your own protocol, the var invokeString will contain any arguments to the app launch.
@@ -44,6 +45,9 @@
         },
         renderDetails: function(data) {
             document.body.innerHTML = (Handlebars.compile($('#checkin-template').html()))(data)
+        },
+        sayHello: function() {
+        	window.hello.say(function(data) {alert(data)}, function() {alert('error')})
         }
     }
 
@@ -74,6 +78,7 @@
                     <h3>{{beer_name}} by {{brewery_name}}</h3>
                     <h4>{{toast_count}} toasts, rating {{avg_rating}}</h4>
                     <p>{{check_in_comment}}</p>
+					<p><button onclick=App.sayHello()>say hello</button></p>
                 </div>
             {{/with}}
         </div>
