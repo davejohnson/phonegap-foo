@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact Example</title>
+
+    <script type="text/javascript" charset="utf-8">
+
+    function onBodyLoad() {
+        localStorage.setItem("key1", "value1");
+        
+ 
+        // value is now equal to "value"
+        localStorage.setItem("key2", "value2");
+        localStorage.setItem("key3", "value3");
+    }
+    
+    
+    function removeKey(){
+        localStorage.removeItem("key1");
+    }
+    
+    function clearStorage(){
+        localStorage.clear();
+    }
+    
+    function viewStorage(){
+        var keyName, value;
+        for (i=0; i< localStorage.length; i++){
+            keyName = localStorage.key(i);
+            value = localStorage.getItem(keyName);
+            document.getElementById("list").innerHTML += keyName +" " + value +"\n";
+
+        }
+    }
+    
+    </script>
+  </head>
+  <body onload="onBodyLoad();">
+    <h1>Example</h1>
+    <p>localStorage</p>
+    <button onclick="removeKey();" value="remove key">remove key1</button>
+    <button onclick="clearStorage();">clear</button>
+    <button onclick="viewStorage();">view localStorage</button>
+    <div id="list"></div>
+  </body>
+</html>
