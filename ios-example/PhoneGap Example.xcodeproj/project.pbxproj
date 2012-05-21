@@ -38,6 +38,7 @@
 		67B3DE0715657C9200969DAE /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B3DE0615657C9200969DAE /* MainViewController.m */; };
 		67B3DE0915657C9300969DAE /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67B3DE0815657C9300969DAE /* MainViewController.xib */; };
 		67B3DE0D15657C9300969DAE /* verify.sh in Resources */ = {isa = PBXBuildFile; fileRef = 67B3DE0C15657C9300969DAE /* verify.sh */; };
+		67F3287E1569F790001E8E4A /* www in Resources */ = {isa = PBXBuildFile; fileRef = 67F3287D1569F790001E8E4A /* www */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		67B3DE0815657C9300969DAE /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainViewController.xib; path = Classes/MainViewController.xib; sourceTree = "<group>"; };
 		67B3DE0B15657C9300969DAE /* README */ = {isa = PBXFileReference; lastKnownFileType = text; name = README; path = Plugins/README; sourceTree = "<group>"; };
 		67B3DE0C15657C9300969DAE /* verify.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = verify.sh; sourceTree = "<group>"; };
+		67F3287D1569F790001E8E4A /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 		67B3DDA915657C9200969DAE = {
 			isa = PBXGroup;
 			children = (
+				67F3287D1569F790001E8E4A /* www */,
 				67B3DDD515657C9200969DAE /* PhoneGap Example */,
 				67B3DDBA15657C9200969DAE /* Frameworks */,
 				67B3DDB815657C9200969DAE /* Products */,
@@ -330,6 +333,7 @@
 				67B3DE0015657C9200969DAE /* Cordova.plist in Resources */,
 				67B3DE0915657C9300969DAE /* MainViewController.xib in Resources */,
 				67B3DE0D15657C9300969DAE /* verify.sh in Resources */,
+				67F3287E1569F790001E8E4A /* www in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
