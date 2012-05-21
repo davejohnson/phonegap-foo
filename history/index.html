@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>History Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, 
+        maximum-scale=1.0" />
+    
+    <link rel="stylesheet" type="text/css" href="master.css" />
+</head>
+    
+
+<body>
+    <h1 id="page1">Page 1</h1>
+    <h1 id="page2">Page 2</h1>
+    <h1 id="page3">Page 3</h1>
+    <h1 id="page4">Page 4</h1>
+    <footer>
+        <ul id="pages">
+            <li><a href="#page1" id="p1">P1</a></li>
+            <li><a href="#page2" id="p2">P2</a></li>
+            <li><a href="#page3" id="p3">P3</a></li>
+            <li><a href="#page4" id="p4">P4</a></li>
+        </ul>
+    </footer>
+</body>
+<script>  
+var $ = function (s) { return document.querySelector(s); };
+
+function setupHistoryClicks() {
+    addClicker($("#p1"));
+    addClicker($("#p2"));
+    addClicker($("#p3"));
+    addClicker($("#p4"));
+}
+
+function addClicker(link) {
+  link.addEventListener("click", function(e) {
+    var id = e.target.href.split('#')[1];
+    //id = "#"+id;
+    e.preventDefault();
+    swapPage(id);
+    history.pushState(id, null, e.target.getAttribute("href"));
+  }, false);
+}
+
+function swapPage(id){
+    $("#"+id).style.display = "block";
+    $("#" +history.state).style.display = "none";
+}
+     
+window.addEventListener("popstate", function(e) {
+    swapPage(e.state);});
+
+
+setupHistoryClicks();
+history.pushState("page1", null, null);
+
+</script>
+</html>

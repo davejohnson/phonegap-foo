@@ -12,5 +12,12 @@
 <script>  
     document.getElementById("status").className = navigator.onLine ? 'online' : 'offline';
     document.getElementById("status").innerHTML = navigator.onLine ? 'online' : 'offline';
+    
+    document.addEventListener("online", onOnline, false);
+    
+    function onOnline() {
+        // Handle the online event
+        alert("hi");
+    }
 </script>
 </html>
