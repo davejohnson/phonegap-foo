@@ -35,7 +35,7 @@
         renderPub: function(data) {
             App.currentPubData = data
             document.body.innerHTML = (Handlebars.compile($('#pub-template').html()))(data)
-            $('.checkin').on('touchstart', App.getDetails, false);
+            $('.checkin').on('click', App.getDetails, false);
         },
         getDetails: function(e) {
             $.ajax({ url: 'http://api.untappd.com/v3/details?key=9976a03749c9d6b2b02c9b5d49de64e8&id='+e.target.getAttribute('data-id')
@@ -48,30 +48,39 @@
     }
 
     document.addEventListener("deviceready", App.getPub, false);
-
+        
     </script>
 
 	<script id="pub-template" type="text/x-handlebars-template">
-        {{#each results}}
-            <div class=checkin data-id={{checkin_id}}>
-                {{#with user}}<img src={{user_avatar}}>{{/with}}
-                {{beer_name}}
-            </div>
-        {{/each}}
+        <div class=header>Untappd checkins</div>
+        <div class=content>
+            <ul>
+                {{#each results}}
+                    <li class=checkin data-id={{checkin_id}}>
+                        {{#with user}}<img src={{user_avatar}}>{{/with}}
+                        {{beer_name}}
+                    </li>
+                {{/each}}
+            </ul>
+        <div>
 	</script>
 
     <script id="checkin-template" type="text/x-handlebars-template">
-        {{#with results}}
-            <div class=checkin-details>
-                {{#with user}}<h2><img src={{user_avatar}}>{{first_name}} {{last_name}}</h2>{{/with}}
-                <h3>{{beer_name}} by {{brewery_name}}</h3>
-                <h4>{{toast_count}} toasts, rating {{avg_rating}}</h4>
-                <p>{{check_in_comment}}</p>
-            </div>
-        {{/with}}
+        <div class=header>Untappd checkin details</div>
+        <div class=content>
+            {{#with results}}
+                <div class=checkin-details>
+                    {{#with user}}<h2><img src={{user_avatar}}>{{first_name}} {{last_name}}</h2>{{/with}}
+                    <h3>{{beer_name}} by {{brewery_name}}</h3>
+                    <h4>{{toast_count}} toasts, rating {{avg_rating}}</h4>
+                    <p>{{check_in_comment}}</p>
+                </div>
+            {{/with}}
+        </div>
+        </div>
     </script>
   </head>
   <body>
-	<h1>Let's check out some beer.</h1>
+    <h1>Let's check out some beer.</h1>
   </body>
 </html>
