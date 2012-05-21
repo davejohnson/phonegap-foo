@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Offline Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, 
+        maximum-scale=1.0" />
+</head>
+
+<body>
+    <p>Current network status: <span id="status">checking...</span></p>
+</body>
+<script>  
+    document.getElementById("status").className = navigator.onLine ? 'online' : 'offline';
+    document.getElementById("status").innerHTML = navigator.onLine ? 'online' : 'offline';
+</script>
+</html>
