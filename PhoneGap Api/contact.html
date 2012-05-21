@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact Example</title>
+
+    <script type="text/javascript" charset="utf-8" src="cordova-1.7.0.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Wait for Cordova to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // Cordova is ready
+    //
+    function onDeviceReady() {
+        // create
+        var contact = navigator.contacts.create();
+        contact.displayName = "Plumber";
+        contact.nickname = "Plumber";       //specify both to support all devices
+        var name = new ContactName();
+        name.givenName = "Jane";
+        name.familyName = "Doe";
+        contact.name = name;
+
+        // save
+        contact.save(onSaveSuccess,onSaveError);
+
+        // clone
+        var clone = contact.clone();
+        clone.name.givenName = "John";
+        console.log("Original contact name = " + contact.name.givenName);
+        console.log("Cloned contact name = " + clone.name.givenName); 
+
+        // remove
+        contact.remove(onRemoveSuccess,onRemoveError);
+    }
+
+    // onSaveSuccess: Get a snapshot of the current contacts
+    //
+    function onSaveSuccess(contact) {
+        alert("Save Success");
+    }
+
+    // onSaveError: Failed to get the contacts
+    //
+    function onSaveError(contactError) {
+        alert("Error = " + contactError.code);
+    }
+
+    // onRemoveSuccess: Get a snapshot of the current contacts
+    //
+    function onRemoveSuccess(contacts) {
+        alert("Removal Success");
+    }
+
+    // onRemoveError: Failed to get the contacts
+    //
+    function onRemoveError(contactError) {
+        alert("Error = " + contactError.code);
+    }
+
+    </script>
+  </head>
+  <body>
+    <h1>Example</h1>
+    <p>Find Contacts</p>
+  </body>
+</html>
