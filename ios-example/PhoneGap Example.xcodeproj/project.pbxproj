@@ -39,6 +39,7 @@
 		67B3DE0915657C9300969DAE /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67B3DE0815657C9300969DAE /* MainViewController.xib */; };
 		67B3DE0D15657C9300969DAE /* verify.sh in Resources */ = {isa = PBXBuildFile; fileRef = 67B3DE0C15657C9300969DAE /* verify.sh */; };
 		67F3287E1569F790001E8E4A /* www in Resources */ = {isa = PBXBuildFile; fileRef = 67F3287D1569F790001E8E4A /* www */; };
+		67F32890156AE654001E8E4A /* Hello.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F3288F156AE654001E8E4A /* Hello.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,8 @@
 		67B3DE0B15657C9300969DAE /* README */ = {isa = PBXFileReference; lastKnownFileType = text; name = README; path = Plugins/README; sourceTree = "<group>"; };
 		67B3DE0C15657C9300969DAE /* verify.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = verify.sh; sourceTree = "<group>"; };
 		67F3287D1569F790001E8E4A /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
+		67F3288D156AE62C001E8E4A /* Hello.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hello.h; sourceTree = "<group>"; };
+		67F3288F156AE654001E8E4A /* Hello.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hello.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +253,8 @@
 				67B3DE0315657C9200969DAE /* AppDelegate.m */,
 				67B3DE0515657C9200969DAE /* MainViewController.h */,
 				67B3DE0615657C9200969DAE /* MainViewController.m */,
+				67F3288D156AE62C001E8E4A /* Hello.h */,
+				67F3288F156AE654001E8E4A /* Hello.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -363,6 +368,7 @@
 				67B3DDDC15657C9200969DAE /* main.m in Sources */,
 				67B3DE0415657C9200969DAE /* AppDelegate.m in Sources */,
 				67B3DE0715657C9200969DAE /* MainViewController.m in Sources */,
+				67F32890156AE654001E8E4A /* Hello.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
