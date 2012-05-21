@@ -8,16 +8,13 @@
 
 	<!-- iPad/iPhone specific css below, add after your main css >
 	<link rel="stylesheet" media="only screen and (max-device-width: 1024px)" href="ipad.css" type="text/css" />		
-	<link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="iphone.css" type="text/css" />		
 	-->
+    <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="iphone.css" type="text/css" />	
 
     <script type="text/javascript" charset="utf-8" src="cordova-1.7.0.js"></script>
     <script type="text/javascript" charset="utf-8" src="zepto.js"></script>
     <script type="text/javascript" charset="utf-8" src="handlebars.js"></script>
     <script type="text/javascript">
-
-	// If you want to prevent dragging, uncomment this section
-    document.addEventListener("touchmove", function(e) {e.preventDefault()}, false);
 
 	/* If you are supporting your own protocol, the var invokeString will contain any arguments to the app launch.
 	see http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
@@ -33,12 +30,22 @@
             // do your thing!
             navigator.notification.alert("Cordova is working")
             $.ajax({ url: 'http://api.untappd.com/v3/thepub?key=9976a03749c9d6b2b02c9b5d49de64e8'
-                   , success: function(data) {console.log(data)}
+                   , success: function(data) {document.body.innerHTML = template(data)}
                    , error: function() {alert('xhr error')} })
+            var template = Handlebars.compile($('#pub-template').html());
         }
         , false);
     
     </script>
+
+	<script id="pub-template" type="text/x-handlebars-template">
+        {{#each results}}
+            <div class=checkin>
+            {{#with user}}<img src={{user_avatar}}>{{/with}}
+            {{beer_name}}
+            </div>
+        {{/each}}
+	</script>
   </head>
   <body>
 	<h1>Let's check out some beer.</h1>

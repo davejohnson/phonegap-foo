@@ -22,7 +22,7 @@
 	<false/>
 	<key>ExternalHosts</key>
 	<array>
-		<string>api.untappd.com</string>
+		<string>*</string>
 	</array>
 	<key>Plugins</key>
 	<dict>
