@@ -50,7 +50,7 @@
 		// do your thing!
 		navigator.notification.alert("Cordova is working")
         $.ajax({ url: 'http://api.untappd.com/v3/thepub?key=9976a03749c9d6b2b02c9b5d49de64e8'
-               , success: function(data) {alert('got the data')}
+               , success: function(data) {console.log(data)}
                , error: function() {alert('xhr error')} })
 	}
     

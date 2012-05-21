@@ -21,7 +21,9 @@
 	<key>OpenAllWhitelistURLsInWebView</key>
 	<false/>
 	<key>ExternalHosts</key>
-	<array/>
+	<array>
+		<string>api.untappd.com</string>
+	</array>
 	<key>Plugins</key>
 	<dict>
 		<key>Compass</key>
